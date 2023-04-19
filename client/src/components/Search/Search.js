@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Search.css';
 import axios from 'axios';
 import CountryInfo from '../CountryInfo/CountryInfo';
+import CountryTable from '../CountryTable/CountryTable';
 
 function Search() {
-  const [country, setCountry] = useState(null);
+  const [countries, setCountry] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -29,14 +30,12 @@ function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`The user wants to search for the country: ${inputValue}`);
     // TODO: send the country name to the backend to retrieve the data
     async function fetchData() {
       try {
         const response = await axios.get(`http://localhost:5000/countries/${inputValue}`);
         const data = response.data;
-        setCountry(data[0]);
-        console.log(country);
+        setCountry(data);
       } catch (error) {
         console.error(error);
       }
@@ -58,7 +57,9 @@ function Search() {
           <input type="text" placeholder="Name of Country" value={inputValue} onChange={handleInputChange}/>
         <button type="submit">Search</button>
       </form>
-      <CountryInfo country={country} isDarkMode={isDarkMode}/>
+      <div className='table-wrap'>
+        <CountryTable countries={countries} isDarkMode={isDarkMode}/>
+      </div>
     </div>
   );
 }

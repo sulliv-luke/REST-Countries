@@ -5,23 +5,19 @@ function CountryInfo(props) {
     const country = props.country
     const isDarkMode = props.isDarkMode
 
-    if(isDarkMode) {
+    useEffect(() => {
         const containers = document.querySelectorAll(".country-container");
         containers.forEach((container) => {
             container.classList.toggle("dark-mode", isDarkMode);
           });
-    } else {
-        const containers = document.querySelectorAll(".country-container");
-        containers.forEach((container) => {
-            container.classList.toggle("dark-mode", isDarkMode);
-          });
-    }
+      }, [isDarkMode]);
+    
 
     if (!country) {
-        return (null);
+        return (
+            <div className='country-container'></div>
+        )
     }
-
-    console.log(country);
 
     return (
         <div className="country-container">

@@ -1,0 +1,10 @@
+.tab {
+    background-color: #fff;
+    color: #121212;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.dark-mode {
+    background-color: #121212;
+    columns: #fff;
+}
