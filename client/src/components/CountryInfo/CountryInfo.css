@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: #121212;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.flag {
+    height: auto;
+    width: 10vw;
+}
+
+p{
+    margin: 1vh;
+}
