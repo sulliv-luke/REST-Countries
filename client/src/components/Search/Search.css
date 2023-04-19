@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 5vh;
-    height: 100vh;
+    height: 95vh;
     background-color: #fff;
     color: #121212;
     transition: background-color 0.5s ease-out, color 0.5s ease-out;

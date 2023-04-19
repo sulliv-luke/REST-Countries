@@ -46,6 +46,7 @@ function Search() {
       fetchData();
     }
   };
+  
 
   return (
     <div className="container">
@@ -57,7 +58,7 @@ function Search() {
           <input type="text" placeholder="Name of Country" value={inputValue} onChange={handleInputChange}/>
         <button type="submit">Search</button>
       </form>
-      <CountryInfo country={country} />
+      <CountryInfo country={country} isDarkMode={isDarkMode}/>
     </div>
   );
 }
