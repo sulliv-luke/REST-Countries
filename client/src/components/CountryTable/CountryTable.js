@@ -3,18 +3,28 @@ import './CountryTable.css';
 import CountryInfo from '../CountryInfo/CountryInfo';
 
 function CountryTable(props) {
-    const countries = props.countries
-    const isDarkMode = props.isDarkMode
+    const countries = props.countries;
+    const isDarkMode = props.isDarkMode;
+    const isMobile = props.isMobile;
 
     useEffect(() => {
-        const table  = document.querySelector(".tab");
-        if (table) {
-            table.classList.toggle("dark-mode", isDarkMode); 
-        }      
+        const tables  = document.querySelectorAll(".tab");
+        const loaders = document.querySelectorAll(".loader");
+        tables.forEach((table) => {
+            table.classList.toggle("dark-mode", isDarkMode);
+          });
+          loaders.forEach((loader) => {
+            loader.classList.toggle("dark-mode", isDarkMode);
+          });
+    
       }, [isDarkMode]);
 
     if (countries == null) {
-        return(null);
+        return(
+        <table className='tab'>
+            <div className="loader"></div>
+        </table>
+        );
     }
 
     let numRows = Math.floor(countries.length / 4);
@@ -22,11 +32,13 @@ function CountryTable(props) {
         numRows++;
     }
 
-    let numCols = 0;
-    if (countries.length >= 4) {
-        numCols = 4;
-    } else {
-        numCols = countries.length;
+    let numCols = 1;
+    if (!isMobile) {
+        if (countries.length >= 4) {
+            numCols = 4;
+        } else {
+            numCols = countries.length;
+        }
     }
 
     let rows = [];

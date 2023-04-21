@@ -4,10 +4,12 @@ import axios from 'axios';
 import CountryInfo from '../CountryInfo/CountryInfo';
 import CountryTable from '../CountryTable/CountryTable';
 
-function Search() {
+function Search(props) {
   const [countries, setCountry] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  let isMobile = props.isMobile;
 
   useEffect(() => {
     const containers = document.querySelectorAll(".container");
@@ -58,7 +60,7 @@ function Search() {
         <button type="submit">Search</button>
       </form>
       <div className='table-wrap'>
-        <CountryTable countries={countries} isDarkMode={isDarkMode}/>
+        <CountryTable countries={countries} isDarkMode={isDarkMode} isMobile={isMobile}/>
       </div>
     </div>
   );
