@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Search.css';
 import axios from 'axios';
-import CountryInfo from '../CountryInfo/CountryInfo';
 import CountryTable from '../CountryTable/CountryTable';
 import Footer from '../Footer/footer';
 
@@ -36,7 +35,7 @@ function Search(props) {
     // TODO: send the country name to the backend to retrieve the data
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:5000/countries/${inputValue}`);
+        const response = await axios.get(`http://localhost:10000/countries/${inputValue}`);
         const data = response.data;
         setCountry(data);
       } catch (error) {
