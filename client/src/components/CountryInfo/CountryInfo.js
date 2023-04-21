@@ -21,7 +21,9 @@ function CountryInfo(props) {
 
     return (
         <div className="country-container">
-            <img className = "flag"src={country.flag} alt={"Flag"} />
+            <div className='flag-container'>
+                <img className = "flag"src={country.flag} alt={"Flag"} />
+            </div>
             <div className='infosection'>
                 <div className=''><h2>{country.name}</h2></div>
                 <p>

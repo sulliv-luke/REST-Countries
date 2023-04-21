@@ -3,6 +3,7 @@ import './Search.css';
 import axios from 'axios';
 import CountryInfo from '../CountryInfo/CountryInfo';
 import CountryTable from '../CountryTable/CountryTable';
+import Footer from '../Footer/footer';
 
 function Search(props) {
   const [countries, setCountry] = useState(null);
@@ -51,7 +52,7 @@ function Search(props) {
 
   return (
     <div className="container">
-      <div>
+      <div className='drk-btn-wrap'>
         <button onClick={toggleDarkMode}>Toggle {isDarkMode ? 'Light' : 'Dark'} Mode</button>
       </div>
       <h1>REST Country Search</h1>
@@ -62,6 +63,7 @@ function Search(props) {
       <div className='table-wrap'>
         <CountryTable countries={countries} isDarkMode={isDarkMode} isMobile={isMobile}/>
       </div>
+      <Footer isDarkMode={isDarkMode}/>
     </div>
   );
 }

@@ -10,7 +10,7 @@
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
-    height: 100%;
+    overflow: hidden;
 }
 
 .country-container.dark-mode {
@@ -19,19 +19,21 @@
     box-shadow: 0 0 3px 3px rgba(159, 0, 167, 0.2);
 }
 
+.flag-container{
+    height: 12rem;
+}
+
 .flag {
-    border-radius: 10px 10px 0 0;
     height: 100%;
-    object-fit: cover;
     width: 100%;
+    object-fit: cover;
 }
 
 .infosection {
     display: flex;
     flex-direction: column;
     line-height: 1.5rem;
-    margin-top: 1rem;
-    padding: 0 26px 2rem;
+    padding: 2em 1.3em 3em;
 }
 
 p {
