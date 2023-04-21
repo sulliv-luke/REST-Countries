@@ -28,7 +28,9 @@ https://rest-countries-frontend.onrender.com/
 
 ### How to set up locally:
 
-Clone this repository. You will need node and npm installed globally on your machine.
+Clone this repository and checkout the branch named 'local', as main was optimised for deployment onto Render.
+
+You will need Node and npm installed globally on your machine.
 
 Installation:
 <br></br>
@@ -51,6 +53,8 @@ Then on another terminal (can be made by clicking "New Terminal" on VS Code):
 <br></br>
 
 The client should then open in localhost:3000
+
+<a name="reflection"/>
 
 ### Reflection:
 
