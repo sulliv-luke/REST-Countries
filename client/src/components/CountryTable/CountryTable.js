@@ -27,11 +27,6 @@ function CountryTable(props) {
         );
     }
 
-    let numRows = Math.floor(countries.length / 4);
-    if (countries.length % 4 !== 0) {
-        numRows++;
-    }
-
     let numCols = 1;
     if (!isMobile) {
         if (countries.length >= 4) {
@@ -39,6 +34,11 @@ function CountryTable(props) {
         } else {
             numCols = countries.length;
         }
+    }
+
+    let numRows = Math.floor(countries.length / numCols);
+    if (countries.length % numCols !== 0) {
+        numRows++;
     }
 
     let rows = [];
