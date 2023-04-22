@@ -46,14 +46,14 @@ function CountryTable(props) {
         const cells = [];
         let k = numCols;
         if (numCols === 4) {
-            k = countries.length - (4 * i);
+            k = countries.length - (numCols * i);
             if (k > 4) {
                 k = numCols;
             }
         }
         console.log(k);
         for (let j = 0; j < k; j++) {
-            let index = j + (i*4);
+            let index = j + (i*numCols);
             cells.push(<td key={j}><CountryInfo country={countries[index]} isDarkMode={isDarkMode} /></td>);
           }
           rows.push(<tr key={i}>{cells}</tr>);
