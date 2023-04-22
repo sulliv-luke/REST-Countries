@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './footer.css';
 
 function Footer(props) {
     const isDarkMode = props.isDarkMode;
 
+    // Handles dark mode
     useEffect(() => {
         const footer = document.querySelectorAll(".footer");
         footer.forEach((footer) => {

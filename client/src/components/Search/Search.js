@@ -12,6 +12,7 @@ function Search(props) {
   let isMobile = props.isMobile;
 
   useEffect(() => {
+    // Used to handle switch to dark mode 
     const containers = document.querySelectorAll(".container");
     const buttons = document.getElementsByTagName("button");
     containers.forEach((container) => {
@@ -22,17 +23,19 @@ function Search(props) {
     }
   }, [isDarkMode]);
 
+  // Toggles dark mode
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  // Handles a change in the input value (the value typed into the search bar)
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: send the country name to the backend to retrieve the data
+    // fetch data from the backend
     async function fetchData() {
       try {
         const response = await axios.get(`http://localhost:5000/countries/${inputValue}`);
@@ -42,7 +45,7 @@ function Search(props) {
         console.error(error);
       }
     }
-
+    // If there is an input value there, fetch the data corresponding to that value
     if (inputValue) {
       fetchData();
     }
